@@ -1,9 +1,21 @@
 <h1>Home#index</h1>
 
-<h3>Home</h3>
-<% @users.each do |user| %>
-  <p>User: <%= user.name %> </p>
-  <p>Email: <%= user.email %> </p>
-<% end %>
+<h3>Users</h3>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
 
 <p>Find me in app/views/home/index.html.erb</p>
