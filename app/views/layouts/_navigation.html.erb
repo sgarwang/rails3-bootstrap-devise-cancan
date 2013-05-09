@@ -16,7 +16,8 @@
     </li>
     <% if current_user.has_role? :admin %>
       <li>
-        <%= link_to('Admin', admin_dashboard_path) %>
+        <%= link_to('Admin', acp_dashboard_path) %>
+        
       </li>
     <% end %>
   <% else %>

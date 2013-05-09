@@ -11,6 +11,7 @@ ActiveAdmin.setup do |config|
   # users to your main site. Defaults to no link.
   #
   # config.site_title_link = "/"
+  config.site_title_link = "/acp"
 
   # Set an optional image to be displayed for the header
   # instead of a string (overrides :site_title)
@@ -35,7 +36,8 @@ ActiveAdmin.setup do |config|
   #
   # Default:
   # config.default_namespace = :admin
-  #
+  config.default_namespace = :acp
+
   # You can customize the settings for each namespace by using
   # a namespace block. For example, to change the site title
   # within a namespace:
@@ -157,20 +159,34 @@ ActiveAdmin.setup do |config|
   # 
   # To change the default utility navigation to show a link to your website & a logout btn
   # 
-  #   config.namespace :admin do |admin|
-  #     admin.build_menu :utility_navigation do |menu|
-  #       menu.add label: "My Great Website", url: "http://www.mygreatwebsite.com", html_options: { target: :blank }
-  #       admin.add_logout_button_to_menu menu
-  #     end
+  # config.namespace :admin do |admin|
+  #   admin.build_menu :utility_navigation do |menu|
+  #     menu.add label: "My Great Website", url: "http://www.mygreatwebsite.com", html_options: { target: :blank }
+  #     admin.add_logout_button_to_menu menu
   #   end
+  # end
+
+    config.namespace :acp do |admin|
+      admin.build_menu :utility_navigation do |menu|
+        menu.add label: "MyGreatWebsite", url: "http://www.mygreatwebsite.com", html_options: { target: :blank }
+        binding.pry
+        admin.add_logout_button_to_menu menu
+      end
+    end
   #
   # If you wanted to add a static menu item to the default menu provided:
   #
-  #   config.namespace :admin do |admin|
-  #     admin.build_menu :default do |menu|
-  #       menu.add label: "My Great Website", url: "http://www.mygreatwebsite.com", html_options: { target: :blank }
-  #     end
+  # config.namespace :admin do |admin|
+  #   admin.build_menu :default do |menu|
+  #     menu.add label: "My Great Website", url: "http://www.mygreatwebsite.com", html_options: { target: :blank }
   #   end
+  # end
+
+    config.namespace :acp do |admin|
+      admin.build_menu :default do |menu|
+        menu.add label: "MyGreatWebStatic", url: "http://www.mygreatwebsite.com", html_options: { target: :blank }
+      end
+    end
 
   # == Download Links
   #

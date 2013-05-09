@@ -73,4 +73,10 @@ group :development, :test do
   gem 'debugger',     :platforms => :ruby_19
   gem "rspec-rails", ">= 2.11.4"
   gem "factory_girl_rails", ">= 4.1.0"
+
+  # Let Pry to support rails in development environment
+  gem 'pry-rails'
+  gem 'pry-doc'
+  gem 'pry-nav'
+  gem 'awesome_print'
 end
