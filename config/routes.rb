@@ -1,16 +1,21 @@
 Rails3BootstrapDeviseCancan::Application.routes.draw do
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
 
-  get "home/index"
-
+  # Fix "uninitialized constant DashboardController", by making this before devise_for
+  # http://stackoverflow.com/questions/16065598
   authenticated :user do
     root :to => 'home#index'
   end
-  root :to => "home#index"
+  root :to => "home#need_login"
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
+  # get "home/index"
+  # resources :home
 
   devise_for :users
   ActiveAdmin.routes(self)
+
   resources :users
 
   # The priority is based upon order of creation:

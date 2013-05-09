@@ -189,3 +189,7 @@ Then /^I should see my name$/ do
   create_user
   page.should have_content @user[:name]
 end
+
+Then /^I should see "([^\"]*)"$/ do |text|
+  page.should have_content(text)
+end
