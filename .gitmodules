@@ -1,0 +1,3 @@
+[submodule "github/RailsApps/rbdc"]
+	path = github/RailsApps/rbdc
+	url = git://github.com/RailsApps/rails3-bootstrap-devise-cancan.git
