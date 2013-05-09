@@ -1,11 +1,11 @@
 <h1>Home#index</h1>
-
-<h3>Users</h3>
+<br/>
 <table class="table table-hover">
   <thead>
     <tr>
       <th>Name</th>
       <th>Email</th>
+      <th>Show</th>
     </tr>
   </thead>
   <tbody>
@@ -13,9 +13,10 @@
     <tr>
       <td><%= user.name %></td>
       <td><%= user.email %></td>
+      <td><%=link_to user.name, user %></td>
     </tr>
   <% end %>
   </tbody>
 </table>
-
+<br/>
 <p>Find me in app/views/home/index.html.erb</p>
