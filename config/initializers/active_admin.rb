@@ -166,13 +166,14 @@ ActiveAdmin.setup do |config|
   #   end
   # end
 
-    config.namespace :acp do |admin|
-      admin.build_menu :utility_navigation do |menu|
-        menu.add label: "MyGreatWebsite", url: "http://www.mygreatwebsite.com", html_options: { target: :blank }
-        binding.pry
-        admin.add_logout_button_to_menu menu
-      end
-    end
+    # http://activeadmin.info/docs/1-general-configuration.html
+    # config.namespace :acp do |admin|
+    #   admin.build_menu :utility_navigation do |menu|
+    #     menu.add label: "MyGreatWebsite", url: "http://www.mygreatwebsite.com", html_options: { target: :blank }
+    #     binding.pry
+    #     admin.add_logout_button_to_menu menu
+    #   end
+    # end
   #
   # If you wanted to add a static menu item to the default menu provided:
   #
